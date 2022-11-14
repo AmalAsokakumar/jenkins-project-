@@ -1,0 +1,33 @@
+pipeline{
+    agent any
+    parameters{
+        booleanParam (name:'executeTest', default:false, description: '')
+    }
+    stages{
+        stage('init'){
+            script{
+                gv = load 'script.groovy'
+            }
+        }
+        stage('test'){
+            when {
+                expression {
+                    params.executeTest 
+                }
+            }
+            steps {
+
+            }
+        }
+        stage('build'){
+            steps{
+
+            }
+        }
+        stage('deployment'){
+            stage{
+
+            }
+        }
+    }
+}

@@ -1,25 +1,10 @@
 pipeline{
     agent any
     stages{
-        stage('build'){
-            where {
-                
-            }
+        stage('init'){
             steps{
-                echo 'this is a build stage'
+                echo "fetching data from the " 
             }
         }
-        stage('test'){
-            steps{
-                echo 'testing the artifact'
-                
-        }
     }
-        stage('deploy'){
-            steps{ 
-                echo "testing completed successfully"
-            }
-    }
-    }
-
 }
