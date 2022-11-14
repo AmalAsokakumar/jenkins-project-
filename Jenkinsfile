@@ -12,8 +12,7 @@ node {
 
 
 
-
-
+//
 // pipeline{
 //     agent any
 //     tools {
