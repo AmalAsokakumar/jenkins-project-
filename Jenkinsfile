@@ -1,9 +1,13 @@
 pipeline{
     agent any
+    tools {
+        maven 'my-mvn'
+    }
     stages{
-        stage('init'){
+        stage('build'){
             steps{
-                echo "fetching data from the " 
+                echo "building the java app "
+                sh 'mvn clean package' 
             }
         }
     }
