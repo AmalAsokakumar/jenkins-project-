@@ -1,8 +1,8 @@
 pipeline{
-  agen any
+  agent any
   stages{
     stage('scan'){
-      steps{
+      seteps {
         withSonarQubeEnv(installationName: 'sq1'){
           sh 'mvn clean sonar:sonar'
         }
