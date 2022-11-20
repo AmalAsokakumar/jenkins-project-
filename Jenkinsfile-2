@@ -1,0 +1,16 @@
+pipeline{
+    agent any 
+    stages{
+        stage('scan'){
+            steps{
+                withSonarQubeEnv(installationName: 'sq1')
+                sh 'mvn clean sonar:sonar'
+            }
+        }
+        stage('Quality Gate'){
+            timeout(time: 2, unit: 'MINUTES'){
+                waitForQualityGate abortPipeline: true
+            }
+        }
+    }
+}
