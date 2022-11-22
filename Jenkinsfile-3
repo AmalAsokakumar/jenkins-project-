@@ -1,0 +1,14 @@
+pipeline{
+  agent any
+  tools {
+  maven  'my-maven'
+  }
+  stages{
+    stage('scan'){
+      steps {
+        echo "hello"
+        }
+      }
+    }
+  }
+}
