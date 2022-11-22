@@ -7,7 +7,7 @@ pipeline{
         stage('scan'){
             steps{
                 withSonarQubeEnv(installationName: 'sq1')
-                sh 'mvn clean sonar:sonar'
+                sh 'mvn sonar:sonar'
             }
         }
         stage('Quality Gate'){
